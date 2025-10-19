@@ -7,7 +7,7 @@ spring:
     show-sql: false
     properties:
       hibernate:
-        dialect: ${DB_DIALECT:org.hibernate.dialect.PostgreSQLDialect} # ← Change to PostgreSQL
+        dialect: org.hibernate.dialect.PostgreSQLDialect # ← HARDCODE this
         format_sql: true
     open-in-view: true
   servlet:
@@ -15,21 +15,21 @@ spring:
       max-file-size: 50MB
       max-request-size: 500MB
   datasource:
-    url: ${DATABASE_URL:jdbc:postgresql://localhost:5432/roth} # ← Change to PostgreSQL
-    username: ${DATABASE_USERNAME:roth_user} # ← Match your env vars
-    password: ${DATABASE_PASSWORD:} # ← This will use your env var
-    driver-class-name: ${DB_DRIVER:org.postgresql.Driver} # ← Change to PostgreSQL
+    url: jdbc:postgresql://dpg-d3fn6bp5pdvs73be51ag-a.oregon-postgres.render.com:5432/roth # ← HARDCODE your URL
+    username: roth_user # ← HARDCODE username
+    password: ArTlnsMDelJMYbabV93WhrQI6ag5rZUL # ← HARDCODE password
+    driver-class-name: org.postgresql.Driver # ← HARDCODE driver
     hikari:
       maximum-pool-size: 5
       connection-timeout: 30000
 
 server:
-  port: ${PORT:8080}
+  port: 10000 # ← HARDCODE port for Render
   error:
     include-message: always
 
 file:
-  upload-dir: ${FILE_UPLOAD_DIR:./uploads}
+  upload-dir: ./uploads
 
 logging:
   level:
