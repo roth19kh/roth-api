@@ -1,0 +1,21 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://dpg-d3fn6bp5pdvs73be5ev0-a.oregon-postgres.render.com:5432/roth
+    username: roth_user
+    password: ArTLhsNDelJNVYbabV93WhrQI00g5rZUL
+    hikari:
+      connection-timeout: 20000
+      minimum-idle: 5
+      maximum-pool-size: 10
+      idle-timeout: 300000
+      max-lifetime: 1200000
+      auto-commit: true
+  jpa:
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+    hibernate:
+      ddl-auto: update
+
+file:
+  upload-dir: ./uploads

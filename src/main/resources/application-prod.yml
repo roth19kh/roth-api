@@ -1,0 +1,28 @@
+spring:
+  config:
+    activate:
+      on-profile: production  # This activates the profile
+  datasource:
+    url: jdbc:postgresql://ep-small-violet-ad60xka9-pooler.c-2.us-east-1.aws.neon.tech/neondb?sslmode=require
+    username: neondb_owner
+    password: npg_PIB9kwwQdI7T
+    driver-class-name: org.postgresql.Driver
+    hikari:
+      maximum-pool-size: 5
+      connection-timeout: 30000
+  jpa:
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+        temp:
+          use_jdbc_metadata_defaults: false
+
+file:
+  upload-dir: /tmp/uploads
+
+logging:
+  level:
+    com.setec: INFO
+    org.hibernate.SQL: WARN
